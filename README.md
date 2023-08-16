@@ -1,2 +1,0 @@
-# Juandavid
-Mis codigos
