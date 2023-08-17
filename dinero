@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+
+/**
+ *
+ * @author Juan david olascoaga
+ */
+public class Operaciones {
+    public static void main(String[] args) {
+        
+
+        
+      // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
+        
+        // Solicitar al usuario ingresar las calificaciones
+        System.out.print("dinero de pablo: ");
+        
+        System.out.print("dinero de jose: ");
+        double jose = scanner.nextDouble();
+        
+        System.out.print("dinero de miguel: ");
+        double miguel = scanner.nextDouble();
+        // suma de las calificaciones
+       
+     
+        
+        // promedio de las calificaciones
+        double pablo = miguel / 4;
+        
+        // Imprimir la suma y el promedio
+        System.out.println("dinero de pablo: " + pablo);
+        System.out.println("dinero de jose: " + jose);
+        System.out.println("dinero de miguel: " + miguel);
+        
+       
+       
+    }
+}
