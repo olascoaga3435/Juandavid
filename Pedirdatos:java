@@ -1,0 +1,18 @@
+
+/**
+ *
+ * @author Jimenez
+ */
+public class Agosto17 {
+    public static void main(String[] args) {
+        //Declaro variables
+        String nombre;
+        String apellido;
+        
+        //Ventana para pedir un dato
+        nombre = JOptionPane.showInputDialog("Escriba su nombre");
+        apellido = JOptionPane.showInputDialog("Escriba su apellido");
+        //Ventana para mostrar el mensaje
+        JOptionPane.showMessageDialog(null, "Nombre completo: "+nombre +" "+ apellido);
+    }
+}
