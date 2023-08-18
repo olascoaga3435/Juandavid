@@ -1,0 +1,11 @@
+public class Numero_Dividido {
+    public static void main(String[] args) {
+        double resultado_Deseado = 52;
+        double suma = 12;
+        double divisor = 8;
+
+        double numero = (resultado_Deseado - suma) * divisor;
+
+        System.out.println("El número que buscamos es: " + numero);
+    }
+}
