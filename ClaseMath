@@ -1,0 +1,28 @@
+
+/**
+ *
+ * @author Juan olascoaga
+ */
+public class Agosto24 {
+    public static void main(String[] args) {
+        
+        double a = 5.5, b = 4;
+       double raiz = Math.sqrt(b);
+       System.out.println("la raiz es :"+raiz);
+       
+       long redondo = Math.round(a);
+       System.out.println("numero redondo :"+redondo);
+       
+       double c = 5, d = 3;
+       double elevado = Math.pow(c,d);
+       System.out.println("numero elevado:"+elevado);
+      
+       double aleatorio =  Math.random()*(10);
+    System.out.println("numero aleatorio:"+aleatorio);
+    
+    double PI_aleatorio = Math.PI;
+        System.out.printf("%4f",PI_aleatorio);
+    }
+    
+           }
+    
