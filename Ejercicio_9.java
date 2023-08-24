@@ -1,6 +1,6 @@
 /**
  *
- * @author José francisco
+ * @author Juan olascoaga
  */
 
 import java.util.Scanner;
