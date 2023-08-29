@@ -1,6 +1,6 @@
 /**
  *
- * @author José francisco
+ * @author Juan olascoaga
  */
 public class Numeros_1_100 {
     public static void main(String[] args) {
