@@ -1,6 +1,6 @@
 /**
  *
- * @author José francisco
+ * @author Juan olascoaga
  */
 public class Abecedario {
     public static void main(String[] args) {
