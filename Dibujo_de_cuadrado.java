@@ -1,6 +1,6 @@
 /**
  *
- * @author José francisco
+ * @author Juan olascoaga
  */
 public class Dibujo_de_cuadrado {
     public static void main(String[] args) {
