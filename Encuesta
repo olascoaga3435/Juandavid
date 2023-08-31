@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+
+/**
+ *
+ * @author juan olascoaga
+ */
+public class Encuesta {
+    public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+        int[] votos = new int[3];
+        String[] candidatos = {"Mbappe", "messi", "Haaland"};
+        int votosTotales = 0;
+        int voto;
+        int maxVotos = 3;
+
+        System.out.println(" las votaciones");
+        System.out.println("Candidatos:");
+        for (int i = 0; i < candidatos.length; i++) {
+            System.out.println((i + 1) + ". " + candidatos[i]);
+        }
+
+        for (int i = 0; i < maxVotos; i++) {
+            System.out.print("Ingrese su voto (: ");
+            voto = sc.nextInt();
+
+            if (voto >= 1 && voto <= 3) {
+                votos[voto - 1]++;
+                votosTotales++;
+                
+               
+                
+            }
+            
+            
+            {
+ 
+                
+            }
+        }
+
+        System.out.println("\nResultados finales:");
+        for (int i = 0; i < candidatos.length; i++) {
+            System.out.println(candidatos[i] + ": " + votos[i] + " votos");
+        }
+        System.out.println("Total de votos: " + votosTotales);
+        
+    }
+}
