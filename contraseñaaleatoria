@@ -1,0 +1,21 @@
+public class contraseña{
+    public static void main(String[] args) {
+  //procedimiento
+        Scanner scanner = new Scanner(System.in);
+        String caracteres = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,´ç+%&";
+        int longitud;
+
+        System.out.println("Numero de carácteres de la contraseña:");
+        longitud = scanner.nextInt();
+
+        StringBuilder password = new StringBuilder();
+        for (int i = 0; i < longitud; i++) {
+            int index = (int) (Math.random() * caracteres.length());
+            password.append(caracteres.charAt(index));
+        }
+
+        System.out.println("contraseña : " + password.toString());
+
+        scanner.close();
+    }
+}
