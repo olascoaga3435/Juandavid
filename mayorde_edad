@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author Juan
+ */
+public class Septiembre {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner (System.in);
+        
+        
+  int menor =0;
+ int mayoredad =0;
+     
+ 
+ 
+ 
+ System.out.println("ingrese una edad");
+     int  edad = teclado.nextInt();
+     
+     while(edad != -1) {
+ 
+    if (edad >=18){
+  mayoredad++;
+      }else {
+       menor++;
+               
+                
+               }  
+         
+   
+    System.out.println("ingrese una edad");
+      edad = teclado.nextInt();
+     
+ {
+     
+     System.out.println("persona mayor de edad"+mayoredad);
+     System.out.println("persona menor de edad"+menor);
+    }
+   }
+  
+   }
+    }
