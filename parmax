@@ -1,0 +1,34 @@
+public class Parmax {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner (System.in);
+     
+       
+        
+        System.out.println("Ingrese su primer numero");
+      int numeroinicial = teclado.nextInt();
+      
+      
+   System.out.println("Ingrese su segundo numero");
+      int numerofinal = teclado.nextInt();
+        
+      
+       int suma=0;
+     
+       
+       System.out.println("numero pares:" + numeroinicial+ " y "  + numerofinal);       
+       
+      
+  for (int i = numeroinicial; i <=numerofinal ; i++)
+  
+  if (i % 2 == 0){
+ System.out.println(i+"");
+       suma+=i;
+  {
+  }
+   
+  }
+  
+  
+     System.out.println("la suma de los numeros:"+suma);
+    }
+}
