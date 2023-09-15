@@ -1,0 +1,40 @@
+//Ejercicio 1
+import java.util.Scanner;
+
+public class Bidimensional_1 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("Ingrese el numero de personas: ");
+        int numPersonas = teclado.nextInt();
+
+        //Crear arreglo bidimensional
+
+        String[][] personas = new String[numPersonas][2];
+
+        //perdir los nombres y edades de las personas
+
+        for (int i = 0; i < numPersonas; i++ ){
+            teclado.nextLine(); //limpieza del buffer
+            System.out.print("Ingrese el nombre de la persona: ");
+            String nombre = teclado.nextLine();
+            System.out.print("Ingrese la edad de la persona: ");
+            String edad = teclado.nextLine();
+
+            //Almacenar la información en el arreglo bidimensional
+
+            personas[i][0] = nombre;
+            personas[i][1] = edad;
+
+        }
+        //Mostrar los datos
+        System.out.println("Los nombres ingresados son:");
+
+        for (int i = 0; i < numPersonas; i++){
+            String nombre = personas[i][0];
+            String edad = personas[i][1];
+
+            System.out.println("Persona "+(i+1)+": Nombre: "+nombre+", Edad: "+edad);
+        }
+    }
+}
