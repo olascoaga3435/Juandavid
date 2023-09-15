@@ -1,0 +1,18 @@
+public class Bidimensional7 {
+    public static void main(String[] args) {
+        int[][] buscarRepetidos = {{1, 2, 3}, {4, 2, 6}, {2, 8, 9}};
+        int elementoBuscado = 2;
+        int cantidad = 0;
+
+        for (int i = 0; i<buscarRepetidos.length;i++){
+            for (int j= 0;j <buscarRepetidos[i].length;j++){
+                if (buscarRepetidos[i][j] == elementoBuscado){
+                    cantidad++;
+                    System.out.println("Número encontrado en la fila ["+i+"] y en la columna ["+j+"]");
+
+                }
+            }
+        }
+        System.out.println("La cantidad encontrada fue "+cantidad);
+    }
+}
