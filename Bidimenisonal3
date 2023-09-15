@@ -1,0 +1,26 @@
+//Suma de dos matrices
+public class Bidimensional_2 {
+    public static void main(String[] args) {
+        int [][] bidimensional1 ={{1,2,3},{4,5,6},{7,8,9}};
+        int [][] bidimensional2 ={{9,8,7},{6,5,4},{3,2,1}};
+
+        //Declarar en variables el numero de columnas y el nombre de filas
+
+        int columnas = 3, filas = 3;
+
+        int [][] resultado = new int[filas][columnas];
+
+        for (int i = 0; i<filas; i++){
+            for (int j = 0; j<columnas;j++){
+                resultado[i][j] = bidimensional1[i][j] + bidimensional2[i][j];
+            }
+        }
+        //imprimir resultado
+        for(int i = 0; i<filas;i++){
+            for (int j = 0; j<columnas;j++){
+                System.out.println(resultado[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
