@@ -1,0 +1,38 @@
+package clases;
+
+public class Inventario {
+    //Características o parámetros
+    private String[][] productos;
+    private int capacidadMaxima;
+    private int contadorObjetos;
+
+
+    //Creamos el constructor
+
+    public Inventario(int capacidadMaxima) {
+        this.capacidadMaxima = capacidadMaxima;
+        productos = new String[capacidadMaxima][2];
+        contadorObjetos = 0;
+    }
+
+    public void agregarProducto(String nombre, int cantidad) {
+        if (contadorObjetos < capacidadMaxima) {
+            productos[contadorObjetos][0] = nombre;
+            productos[contadorObjetos][1] = String.valueOf(cantidad);
+            contadorObjetos++;
+            System.out.println(nombre + " ha sido ingresado al inventario");
+        }else {
+            System.out.println("Error. No fue posible agregar");
+        }
+    }
+    public void mostrarProductos(){
+        if (contadorObjetos == 0){
+            System.out.println("El inventario está vacío");
+        }else {
+            System.out.println("\n------ Inventario ------");
+            for (int i = 0; i<contadorObjetos; i++){
+                System.out.println(productos[i][0]+" - Cantidad: "+productos[i][1]);
+            }
+        }
+    }
+}
