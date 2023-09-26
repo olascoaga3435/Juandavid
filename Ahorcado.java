@@ -1,0 +1,129 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+
+public class Ahorcado extends JFrame {
+    private final Map<String, String> palabrasConExplicacion = new HashMap<>();
+    private String palabraSecreta;
+    private StringBuilder palabraOculta;
+    private int intentos = 6;
+
+    private final JLabel palabraLabel;
+    private final JLabel intentosLabel;
+    private final JTextField letraTextField;
+    private final JButton adivinarButton;
+    private final JPanel panel;
+
+    public Ahorcado() {
+        mostrarMensajeInicial();
+
+        setTitle("Juego de Ahorcado");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(400, 300);
+        setLayout(new BorderLayout());
+
+        palabrasConExplicacion.put("int", "Tipo de dato para números enteros.");
+        palabrasConExplicacion.put("short", "Tipo de dato para números enteros cortos.");
+        palabrasConExplicacion.put("long", "Tipo de dato para números enteros largos.");
+        palabrasConExplicacion.put("float", "Tipo de dato para números de punto flotante.");
+        palabrasConExplicacion.put("double", "Tipo de dato para números de punto flotante de doble precisión.");
+
+        palabraSecreta = seleccionarPalabraAleatoria();
+        palabraOculta = new StringBuilder("_".repeat(palabraSecreta.length()));
+
+        palabraLabel = new JLabel(palabraOculta.toString());
+        palabraLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        palabraLabel.setFont(new Font("Arial", Font.BOLD, 24));
+
+        intentosLabel = new JLabel("Intentos restantes: " + intentos);
+        intentosLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        intentosLabel.setFont(new Font("Arial", Font.BOLD, 16));
+
+        letraTextField = new JTextField();
+        letraTextField.setFont(new Font("Arial", Font.PLAIN, 18));
+        adivinarButton = new JButton("Adivinar");
+        adivinarButton.setFont(new Font("Arial", Font.BOLD, 18));
+        adivinarButton.addActionListener(e -> adivinarLetra());
+
+        panel = new JPanel();
+        panel.setLayout(new GridLayout(4, 1));
+        panel.add(palabraLabel);
+        panel.add(intentosLabel);
+        panel.add(letraTextField);
+        panel.add(adivinarButton);
+
+        add(panel, BorderLayout.CENTER);
+
+        setVisible(true);
+    }
+
+    private void mostrarMensajeInicial() {
+        JOptionPane.showMessageDialog(this,
+                "Bienvenido al Juego de Ahorcado\n" +
+                "Las palabras a adivinar son 5 tipos de datos.",
+                "Instrucciones",
+                JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    private String seleccionarPalabraAleatoria() {
+        Random rand = new Random();
+        int indice = rand.nextInt(palabrasConExplicacion.size());
+        return palabrasConExplicacion.keySet().toArray(new String[0])[indice];
+    }
+
+    private void adivinarLetra() {
+        String letra = letraTextField.getText().toLowerCase();
+        letraTextField.setText("");
+
+        boolean acierto = false;
+        for (int i = 0; i < palabraSecreta.length(); i++) {
+            if (palabraSecreta.charAt(i) == letra.charAt(0)) {
+                palabraOculta.setCharAt(i, letra.charAt(0));
+                acierto = true;
+            }
+        }
+
+        if (!acierto) {
+            intentos--;
+        }
+
+        palabraLabel.setText(palabraOculta.toString());
+        intentosLabel.setText("Intentos restantes: " + intentos);
+
+        if (palabraOculta.toString().equals(palabraSecreta)) {
+            mostrarExplicacion();
+            JOptionPane.showMessageDialog(this, "¡Felicidades, Ganaste!");
+            reiniciarJuego();
+        } else if (intentos == 0) {
+            mostrarExplicacion();
+            JOptionPane.showMessageDialog(this, "¡Perdiste! La palabra era: " + palabraSecreta);
+            reiniciarJuego();
+        }
+    }
+
+    private void mostrarExplicacion() {
+        String explicacion = palabrasConExplicacion.get(palabraSecreta);
+        if (explicacion != null) {
+            JOptionPane.showMessageDialog(this, "La palabra era: " + palabraSecreta + "\n\n" + "Explicación: " + explicacion, "Explicación de la palabra", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "No hay explicación disponible para la palabra.", "Explicación de la palabra", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    private void reiniciarJuego() {
+        palabraSecreta = seleccionarPalabraAleatoria();
+        palabraOculta = new StringBuilder("_".repeat(palabraSecreta.length()));
+        intentos = 6;
+
+        palabraLabel.setText(palabraOculta.toString());
+        intentosLabel.setText("Intentos restantes: " + intentos);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(Ahorcado::new);
+    }
+}
