@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // operaciones
+     let num1,num2,num3, num4, resultado;
+     num1 = parseInt(prompt("ingrese su primer numero"));
+     num2 = parseInt(prompt("ingrese su segundo numero"));
+     num3 = parseInt(prompt("ingrese su tercer numero numero"));
+     num4 = parseInt(prompt("ingrese su cuarto numero"));
+    
+     suma = num1 + num2 + num3 + num4
+     alert("el resultado de la suma es : "+suma);
+   
+     multi = num1 * num2 * num3 * num4
+    alert("el resultado de la multiplicacion  es : "+multi);
+   
+    resta = num1 - num2 - num3 - num4
+    alert("el resultado de resta  es : "+resta);
+   
+    divicion = num1 / num2 / num3 / num4
+    alert("el resultado de la divicion  es : "+divicion);
+
+     let menor = Math.min(num1,num2,num3,num4);
+    alert("el numero menor es :"+ menor);
+   
+    let  mayor = Math.max(num1,num2,num3,num4);
+   alert("el numero mayor es : "+ mayor);
+   let promedio = suma / 4 ;
+   alert("el promdeio es: "+ promedio);
+    </script>
+</body>
+</html>
