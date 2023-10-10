@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //pedir numero
+        let numero,numero2,resultado;
+          numero1 = parseInt(prompt("insert number"));
+          numero2 = parseInt(prompt("insert number"));
+         resultado = numero1 + numero2
+         alert("su numero es:"+resultado);
+    </script>
+</body>
+</html>
