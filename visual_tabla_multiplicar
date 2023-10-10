@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Multiplicar</title>
+</head>
+<body>
+    <script>
+        while (true) {
+            
+            let numero = prompt("ingrese un numero para y precione 0 para mostar la tabla q ingreso";
+
+
+            if (numero === "0") {
+                alert("Goodbye!");
+                break; // Salir del bucle while
+            }
+
+            numero = parseFloat(numero);
+
+         
+            if (isNaN(numero)) {
+                alert("Por favor, ingrese un número válido.");
+            } else {
+               
+                let tabla = document.createElement("table");
+                tabla.border = "1";
+
+            
+                for (let i = 1; i <= 10; i++) {
+                    let fila = tabla.insertRow();
+                    let celda1 = fila.insertCell(0);
+                    let celda2 = fila.insertCell(1);
+                    celda1.textContent = `${numero} x ${i}`;
+                    celda2.textContent = numero * i;
+                }
+
+                document.body.appendChild(tabla);
+            }
+        }
+    </script>
+</body>
+</html>
